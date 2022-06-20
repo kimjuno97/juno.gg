@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juno.gg</title>
+    <style>
+        #topstyle{
+            display: grid;
+            grid-template-columns: 0.5fr 3fr 0.5fr;       
+            align-items: center;     
+        }
+        #twotopstyle{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            list-style: none;
+            justify-items: center;
+            align-items: center;   
+            font-size: 20px;
+        }
+        .lefttop{
+            margin-left: 40px;
+        }
+       a{
+        text-decoration: none;
+        color: white;
+               
+       }
+      body {
+        background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FosPYR%2FbtqF2RPpgtH%2FAgwe8MZcJhaEYVSLiYfAZ0%2Fimg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+      #formstyle{
+        display: flex;
+        justify-items: center;
+        align-items: center; 
+        margin-top: 51px;
+        margin-left: 178px;
+      }
+      #kr{
+        background-color: rgba(0,0,0,0);
+        border-color: black;
+      }
+      #kr::placeholder{
+        color:white
+      }
+      #search{
+        background-color: rgba(0,0,0,0);
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="topstyle">
+            <h1 class="lefttop">
+                <a href="/">
+                    <img src="https://s-lol-web.op.gg/images/icon/opgglogo.svg?v=1655280878653" alt="OP.GG" width="65px" height="16px">
+                </a> 
+            </h1>
+            <nav>
+                <ul id="twotopstyle">
+                    <li>
+                        <a href="https://www.leagueoflegends.com/ko-kr/">
+                            <img src="https://opgg-gnb.akamaized.net/static/images/icons/img-navi-lol-white.svg?image=q_auto,f_webp,w_48&v=1655280878653" alt="리그오브레전드" width="24px" height="24px">
+                            <span>리그오브레전드</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://duo.op.gg/">
+                            <img src="https://opgg-gnb.akamaized.net/static/images/icons/img-navi-duo-gray.svg?image=q_auto,f_webp,w_48&v=1655280878653" alt="Duo" width="24px" height=" 24px">
+                            <span>N</span>
+                            <span>Duo</span>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="https://www.op.gg/champions">
+                            <span>챔피언분석</span>
+                        </a>
+                    </li>    
+                </ul>
+            </nav>           
+    </header>
+    <main>
+        <form id="formstyle" method="get">
+            <div>               
+                <input id="kr" autocomplete="off" type="text" placeholder="소환사명, 소환사명, ..." value="">
+            </div>
+            <button id="search" type="submit" onclick="frmIn()" style="margin-top:4px ;">.GG</button>
+        </form>
+    </main>
+</body>
+<script>
+function frmIn(){
+    let frm = document.getElementById("formstyle");
+    let nickName = document.getElementById("kr").value.trim();
+    if(nickName==""){
+        console.log("in");
+        return alert("소환사명을 입력하여주세요");
+    }
+    frm.action = 'https://www.op.gg/summoners/kr/'+nickName;
+    frm.submit();
+}
+</script>
+  
+</html>
